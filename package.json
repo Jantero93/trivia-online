@@ -7,8 +7,8 @@
     "node": "12.19.0"
   },
   "scripts": {
-    "start:production": "cd server/ && node dist/index.js",
-    "start:dev": "concurrently --kill-others \"cd client/ && npm start\" \"cd server && npm run dev\"",
+    "start:production": "npm --prefix ./server/ start",
+    "start:dev": "concurrently --kill-others \"cd client/ && npm start\" \"npm --prefix ./server/ run dev\"",
     "front:install:build": "cd client/ && npm i && npm run build",
     "server:install:compile": "cd server && npm i && npm run compile",
     "preinstall": "npm run front:install:build",
