@@ -8,11 +8,11 @@
   },
   "scripts": {
     "start:production": "npm --prefix ./server/ start",
-    "start:dev": "concurrently --kill-others \"cd client/ && npm start\" \"npm --prefix ./server/ run dev\"",
+    "start:dev": "concurrently --kill-others -c cyan,magenta -n CLIENT,SERVER \"cd client/ && npm start\" \"npm --prefix ./server/ run dev\"",
     "front:install:build": "cd client/ && npm i && npm run build",
     "server:install:compile": "cd server && npm i && npm run compile",
     "preinstall": "npm run front:install:build",
-    "postinstall": "npm run server:install:compile"
+    "postinstall": "npm run server:install:compile"    
   },
   "repository": {
     "type": "git",
